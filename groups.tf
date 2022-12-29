@@ -17,6 +17,6 @@ resource "vault_identity_group" "group" {
 resource "vault_identity_group_alias" "group-alias" {
   for_each       = tomap(var.squads)
   name           = each.key
-  mount_accessor = var.mount_accessor
+  mount_accessor = var.vault_mount_accessor
   canonical_id   = vault_identity_group.group[each.key].id
 }

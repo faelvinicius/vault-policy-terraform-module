@@ -4,7 +4,7 @@ variable "application" {
   default = ""
 }
 
-variable "mount_accessor" {
+variable "vault_mount_accessor" {
   description = "External name accessor in vault. Example: oidc, github...,"
   type = string
   default = "auth_oidc_86ec3b1c"
