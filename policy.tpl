@@ -3,7 +3,7 @@ path "secret/*" {
 }
 %{ for env in environment ~} 
 %{ for app in applications ~}  
-path "${secrets}/data/${app},${env}/*" { 
+path "secret/data/${app},${env}" { 
   capabilities = ${permissions}
 }
 %{ endfor ~}

@@ -11,7 +11,6 @@ resource "vault_policy" "policy" {
       applications = each.value["applications"],
       permissions  = jsonencode(each.value["permissions"]),
       environment  = each.value["environment"],
-      secrets      = jsonencode(var.secrets_path)
     }
   )
 }
