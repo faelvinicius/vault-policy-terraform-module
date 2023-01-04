@@ -22,7 +22,7 @@ variable "squads" {
     applications       = optional(set(string))
     permissions        = optional(list(string))
     environment        = optional(set(string))
-    az_group_object_id = optional(set(string))
+    az_group_object_id = optional(string)
   }))
   default = {}
 }
