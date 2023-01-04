@@ -16,7 +16,7 @@ resource "vault_identity_group" "group" {
 # https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/identity_group_alias
 resource "vault_identity_group_alias" "group-alias" {
   for_each       = tomap(var.squads)
-  name           = each.key
+  name           = each.value["az_group_object_id"]
   mount_accessor = var.vault_mount_accessor
   canonical_id   = vault_identity_group.group[each.key].id
 }

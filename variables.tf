@@ -19,9 +19,10 @@ variable "group_type" {
 variable "squads" {
   description = "Squad name in organization"
   type = map(object({
-    applications = optional(set(string))
-    permissions  = optional(list(string))
-    environment  = optional(set(string))
+    applications       = optional(set(string))
+    permissions        = optional(list(string))
+    environment        = optional(set(string))
+    az_group_object_id = optional(set(string))
   }))
   default = {}
 }
