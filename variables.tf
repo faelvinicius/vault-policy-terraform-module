@@ -23,12 +23,14 @@ variable "squads" {
     permissions        = optional(list(string))
     environment        = optional(set(string))
     az_group_object_id = optional(string)
+    kv_path            = optional(string, "secret")
+    kv_configserver    = optional(bool, true)
   }))
   default = {}
 }
 
-variable "secrets_path" {
-  description = "Secrets path name"
+variable "kv_path" {
+  description = "kv path name"
   type = string
   default = "secret"
 }
