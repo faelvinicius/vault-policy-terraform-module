@@ -1,9 +1,9 @@
-path "secret/*" {
+path "${kv_path}/*" {
   capabilities = ["list"]
 }
 %{ for env in environment ~} 
 %{ for app in applications ~}  
-path "secret/data/${app},${env}" { 
+path "${kv_path}/data/${app},${env}" { 
   capabilities = ${permissions}
 }
 %{ endfor ~}
