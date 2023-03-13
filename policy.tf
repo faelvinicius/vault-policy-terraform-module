@@ -7,14 +7,14 @@ resource "vault_policy" "kv_configserver_policy" {
 
   name     = each.key
   policy = each.value["kv_configserver"] == true ? templatefile(
-    "${path.module}/kv_configserver_policy.tpl", {
+    "${path.module}/templates/kv_configserver_policy.tpl", {
       applications = each.value["applications"],
       permissions  = jsonencode(each.value["permissions"]),
       environment  = each.value["environment"],
       kv_path      = each.value["kv_path"],
     } 
   ) : templatefile(
-    "${path.module}/kv_standard_policy.tpl", {
+    "${path.module}/templates/kv_standard_policy.tpl", {
       applications = each.value["applications"],
       permissions  = jsonencode(each.value["permissions"]),
       kv_path      = each.value["kv_path"],
