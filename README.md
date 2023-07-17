@@ -6,6 +6,11 @@
 To add a new policy or update existing policy, edit the <b>vars/policies.tfvars</b> file.
 
 ```
+export TF_VAR_vault_addr="http://localhost:8200"
+export TF_VAR_vault_login="terraform"
+export TF_VAR_vault_password="terraform"
+```
+```
 #Create configserver policy
 squads  = {
   squad_name = { 
